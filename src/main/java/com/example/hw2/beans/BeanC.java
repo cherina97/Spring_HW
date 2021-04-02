@@ -1,9 +1,11 @@
 package com.example.hw2.beans;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
+@Order(3)
 public class BeanC {
 
     @Value("${beanC.name}")
@@ -19,5 +21,14 @@ public class BeanC {
                 ", value=" + value +
                 '}';
     }
+
+    private void initBeanC() {
+        System.out.println("Init method Bean C");
+    }
+
+    private void destroyBeanC() {
+        System.out.println("Destroy method Bean C");
+    }
+
 
 }
