@@ -1,8 +1,6 @@
 package com.example.hw2.configs;
 
-import com.example.hw2.beans.BeanB;
-import com.example.hw2.beans.BeanC;
-import com.example.hw2.beans.BeanD;
+import com.example.hw2.beans.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 
@@ -21,19 +19,30 @@ public class Config2 {
 
     @Bean(initMethod = "initBeanD",
             destroyMethod = "destroyBeanD")
-    public BeanD getBeanD() {
+    public BeanD beanD() {
         return new BeanD();
     }
 
     @Bean(initMethod = "initBeanB",
             destroyMethod = "destroyBeanB")
-    public BeanB getBeanB() {
+    public BeanB beanB() {
         return new BeanB();
     }
 
     @Bean(initMethod = "initBeanC",
             destroyMethod = "destroyBeanC")
-    public BeanC getBeanC() {
+    public BeanC beanC() {
         return new BeanC();
     }
+
+    @Bean
+    public static FactoryPostProcessor factoryPost() {
+        return new FactoryPostProcessor();
+    }
+
+    @Bean
+    public static PostProcessor postProcessor() {
+        return new PostProcessor();
+    }
+
 }

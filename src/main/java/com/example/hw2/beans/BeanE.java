@@ -21,6 +21,14 @@ public class BeanE {
         System.out.println("preDestroy() method in Bean E");
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
     @Override
     public String toString() {
         return "BeanA{" +

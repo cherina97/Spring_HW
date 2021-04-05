@@ -20,6 +20,14 @@ public class BeanA implements InitializingBean, DisposableBean {
         System.out.println("destroy() method in Bean A");
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
     @Override
     public String toString() {
         return "BeanA{" +

@@ -26,6 +26,10 @@ public class BeanB {
         System.out.println("Init method Bean B");
     }
 
+    public void initBeanBWithPostProcessor() {
+        System.out.println("Init method Bean B with FactoryPostProcessor");
+    }
+
     private void destroyBeanB() {
         System.out.println("Destroy method Bean B");
     }
